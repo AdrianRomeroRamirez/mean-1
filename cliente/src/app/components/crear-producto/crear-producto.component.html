@@ -16,6 +16,15 @@
                 class="form-control form-control-lg"
                 placeholder="Product"
               />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productoForm.get('product')?.hasError('required') &&
+                  productoForm.get('product')?.touched
+                "
+              >
+                <span>Product is <strong>required</strong></span>
+              </div>
             </div>
             <div class="mb-3">
               <input
@@ -24,6 +33,15 @@
                 class="form-control form-control-lg"
                 placeholder="Category"
               />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productoForm.get('category')?.hasError('required') &&
+                  productoForm.get('category')?.touched
+                "
+              >
+                <span>Category is <strong>required</strong></span>
+              </div>
             </div>
             <div class="mb-3">
               <input
@@ -32,6 +50,15 @@
                 class="form-control form-control-lg"
                 placeholder="Location"
               />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productoForm.get('location')?.hasError('required') &&
+                  productoForm.get('location')?.touched
+                "
+              >
+                <span>Location is <strong>required</strong></span>
+              </div>
             </div>
             <div class="mb-3">
               <input
@@ -40,6 +67,15 @@
                 class="form-control form-control-lg"
                 placeholder="Price"
               />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productoForm.get('price')?.hasError('required') &&
+                  productoForm.get('price')?.touched
+                "
+              >
+                <span>Price is <strong>required</strong></span>
+              </div>
             </div>
             <div class="mb-3">
               <button
@@ -48,7 +84,11 @@
               >
                 RETURN
               </button>
-              <button type="submit" class="btn btn-success btn-lg float-end">
+              <button
+                [disabled]="productoForm.invalid"
+                type="submit"
+                class="btn btn-success btn-lg float-end"
+              >
                 ADD
               </button>
             </div>

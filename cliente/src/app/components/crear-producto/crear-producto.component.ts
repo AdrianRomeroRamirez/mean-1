@@ -20,7 +20,5 @@ export class CrearProductoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregarProducto() {
-    console.log(this.productoForm);
-  }
+  agregarProducto() {}
 }
